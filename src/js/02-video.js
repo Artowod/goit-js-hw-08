@@ -13,19 +13,19 @@
 воспроизведения обновлялось в хранилище не чаще чем раз в секунду. */
 
 import Player from '@vimeo/player';
-import _ from 'lodash.throttle';
-
+import _ from 'lodash.throttle'; 
 const iframe = document.querySelector('iframe');
 const player = new Player('vimeo-player', iframe);
 
-const currentTime =
-  localStorage.getItem('videoplayer-current-time') === 'null'
-    ? 0
-    : localStorage.getItem('videoplayer-current-time');
 
-player.setCurrentTime(currentTime).then(seconds => {
-  console.log(seconds, 'sec');
-});
+  const currentTime =
+    localStorage.getItem('videoplayer-current-time') === null
+      ? 0
+      : localStorage.getItem('videoplayer-current-time');
+
+    player.setCurrentTime(currentTime).then(seconds => {
+      console.log(seconds, 'sec');
+    });
 
 player.on(
   'timeupdate',
@@ -34,4 +34,4 @@ player.on(
       localStorage.setItem('videoplayer-current-time', seconds);
     });
   }, 1000),
-);
+); 

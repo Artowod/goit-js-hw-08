@@ -56,5 +56,6 @@ try {
 const handleSubmiyForm = form.addEventListener('submit', e => {
   e.preventDefault();
   form.reset();
+  localStorage.removeItem('feedback-form-state');
   console.log(objData);
 });
