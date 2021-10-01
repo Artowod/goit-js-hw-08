@@ -13,7 +13,7 @@
 воспроизведения обновлялось в хранилище не чаще чем раз в секунду. */
 
 import Player from '@vimeo/player';
-import _ from 'lodash';
+import _ from 'lodash.throttle';
 
 const iframe = document.querySelector('iframe');
 const player = new Player('vimeo-player', iframe);
@@ -29,7 +29,7 @@ player.setCurrentTime(currentTime).then(seconds => {
 
 player.on(
   'timeupdate',
-  _.throttle(() => {
+  _(() => {
     player.getCurrentTime().then(function (seconds) {
       localStorage.setItem('videoplayer-current-time', seconds);
     });
