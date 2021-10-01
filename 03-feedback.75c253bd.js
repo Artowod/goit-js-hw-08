@@ -4,4 +4,4 @@ var t=arguments[3],n="Expected a function",e=NaN,i="[object Symbol]",r=/^\s+|\s+
 },{}],"TTyb":[function(require,module,exports) {
 "use strict";var e=t(require("lodash.throttle"));function t(e){return e&&e.__esModule?e:{default:e}}const r=document.querySelector(".feedback-form"),o=document.querySelector(".feedback-form input");let a;const l=function({email:e,message:t}){r.querySelector("input").value=e,r.querySelector("textarea").value=t};try{l(a=null===localStorage.getItem("feedback-form-state")?{email:"",message:""}:JSON.parse(localStorage.getItem("feedback-form-state")))}catch(c){console.log("Error in Parsing from storage",c)}try{r.addEventListener("input",(0,e.default)(()=>{a.email=r.querySelector("input").value,a.message=r.querySelector("textarea").value,localStorage.setItem("feedback-form-state",JSON.stringify(a))},500))}catch(n){console.log("Error in stringifying to storage",n)}const s=r.addEventListener("submit",e=>{e.preventDefault(),r.reset(),console.log(a)});
 },{"lodash.throttle":"FNyO"}]},{},["TTyb"], null)
-//# sourceMappingURL=/parcel-project-template/03-feedback.75c253bd.js.map
+//# sourceMappingURL=/goit-js-hw-08/03-feedback.75c253bd.js.map
